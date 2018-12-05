@@ -23,8 +23,15 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
-	<dependencies>
+	<repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 
+	<dependencies>
 		<!-- spring-boot-starter-web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,7 +68,6 @@
 			<artifactId>fabric-chaincode-protos</artifactId>
 			<version>${fabric-chaincode-java.version}</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
