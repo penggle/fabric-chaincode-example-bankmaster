@@ -16,6 +16,7 @@
 	<properties>
 		<springboot.version>2.0.4.RELEASE</springboot.version>
 
+		<netty-tcnative.version>2.0.12.Final</netty-tcnative.version>
 		<fabric-chaincode-java.version>1.3.0</fabric-chaincode-java.version>
 
 		<java.version>1.8</java.version>
@@ -68,6 +69,16 @@
 			<artifactId>fabric-chaincode-protos</artifactId>
 			<version>${fabric-chaincode-java.version}</version>
 		</dependency>
+		
+		<!-- 
+			指定tcnative版本，以解决netty版本与tcnative版本不一致导致的问题：java.lang.AbstractMethodError at io.netty.internal.tcnative.SSL.readFromSSL
+			netty(4.1.27.Final) 与 tcnative(2.0.12.Final)适配
+		 -->
+		<dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-tcnative-boringssl-static</artifactId>
+            <version>${netty-tcnative.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
