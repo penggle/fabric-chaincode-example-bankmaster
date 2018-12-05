@@ -21,7 +21,7 @@ public class BankMasterApplication {
 			.web(WebApplicationType.NONE)
 			.run(args);
 		LOGGER.info(">>> Starting chaincode, args = {}", Arrays.toString(args));
-		args = new String[] {"-i", "bankmaster", "--peerAddress", "172.16.96.15:7051"};
+		//args = new String[] {"-i", "bankmaster", "--peerAddress", "192.168.137.100:7051"};
 		new BankMasterChaincode().start(args);
 	}
 
