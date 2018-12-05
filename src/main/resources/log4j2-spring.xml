@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--设置log4j2的自身log级别为debug, 120秒自动扫描加载更改 -->
+<configuration status="OFF" monitorInterval="120">
+	<appenders>
+		<console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] %m%n"/>
+		</console>
+	</appenders>
+
+	<loggers>
+		<logger name="org.apache.commons" level="ERROR"/>
+		<logger name="org.apache.http" level="ERROR"/>
+		<logger name="org.springframework" level="INFO"/>
+		<logger name="org.hyperledger.fabric" level="INFO"/>
+		
+		<logger name="com.penglecode" level="DEBUG"/>
+		
+		<root level="INFO">
+			<appender-ref ref="CONSOLE"/>
+		</root>
+	</loggers>
+
+</configuration>

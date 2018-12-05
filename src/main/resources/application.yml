@@ -1,0 +1,19 @@
+#SpringBoot自动配置开启debug模式
+debug: false
+
+#应用日志配置
+logging:
+    config: classpath:log4j2-spring.xml
+
+#SpringBoot应用的名称
+spring:
+    application:
+        name: fabric-chaincode-example-bankmaster
+    profiles:
+        active: dev
+
+    #Spring国际化配置
+    messages:
+        basename: config/i18/messages
+        cache-duration: -1
+        encoding: UTF-8
