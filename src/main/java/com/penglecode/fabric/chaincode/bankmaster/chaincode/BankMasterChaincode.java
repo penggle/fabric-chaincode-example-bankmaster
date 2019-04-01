@@ -71,7 +71,7 @@ public class BankMasterChaincode extends ChaincodeBase {
         	LOGGER.error(e.getMessage(), e);
         	response = newErrorResponse(String.format("调用智能合约出错：%s", ExceptionUtils.getRootCauseMessage(e)));
         }
-        LOGGER.info("<<< 调用智能合约结束，response = [status = {}, message = {}, payload = {}]", response.getStatus().getCode(), response.getMessage(), new String(response.getPayload(), CHARSET));
+        LOGGER.info("<<< 调用智能合约结束，response = [status = {}, message = {}, payload = {}]", response.getStatus().getCode(), response.getMessage(), response.getPayload() == null ? null : new String(response.getPayload(), CHARSET));
         return response;
 	}
 	
